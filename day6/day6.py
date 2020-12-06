@@ -9,10 +9,8 @@ def part1(inp):
 
     for group in question_answers:
         sanitized_str = str(group).replace("\n", "")
-        char_dictionary = dict.fromkeys(sanitized_str, 0)
-        for c in sanitized_str:
-            char_dictionary[c] += 1
-        answered_yes += len(char_dictionary.keys())
+        set_dict = set(sanitized_str)
+        answered_yes += len(set_dict)
     print(answered_yes)
 
 

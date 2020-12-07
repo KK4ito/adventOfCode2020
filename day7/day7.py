@@ -32,11 +32,9 @@ def recursive_check_bag_for_parameter(root_bag, skip_bag, bag):
 
 def recursive_count_for_parameter(root_bag, bag):
     cnt_total = 0
-    to_traverse_bag = []
     if bag in root_bag:
         cnt_total += sum(root_bag[bag].values())
         for entry_key, entry_value in root_bag[bag].items():
-            to_traverse_bag.append(entry_key)
             cnt_total += entry_value * recursive_count_for_parameter(root_bag, entry_key)
     return cnt_total
 

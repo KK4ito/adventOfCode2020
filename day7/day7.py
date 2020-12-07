@@ -24,9 +24,8 @@ def recursive_check_bag_for_parameter(root_bag, skip_bag, bag):
     cnt_shiny_bags = 0
     for entry in root_bag:
         if bag in root_bag[entry] and entry not in skip_bag:
-            cnt_shiny_bags += 1
             skip_bag[entry] = 1
-            cnt_shiny_bags += recursive_check_bag_for_parameter(root_bag, skip_bag, entry)
+            cnt_shiny_bags += 1 + recursive_check_bag_for_parameter(root_bag, skip_bag, entry)
     return cnt_shiny_bags
 
 
